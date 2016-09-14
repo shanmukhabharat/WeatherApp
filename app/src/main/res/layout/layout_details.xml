@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="phunware.assignment.weatherapp.activities.DetailsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/details_zipcode_layout">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/details_zipcode_text_input_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/details_zipcode_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:hint="@string/hint_zipcode" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/details_submit_button"
+            android:text="submit"
+            android:background="@color/colorAccent"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/details_zipcode_layout"
+        android:id="@+id/details_layout"
+        android:layout_marginTop="16dp">
+
+        <!--City name-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/details_city"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <!--Image representing current weather and current weather conditions in words-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/details_city"
+            android:id="@+id/details_weather_conditions_parent"
+            android:layout_margin="5dp">
+
+
+            <ImageView
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:id="@+id/details_weather_conditions_image"
+                android:src="@drawable/details_weather_icon"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:singleLine="false"
+                android:textColor="@color/black"
+                android:padding="5dp"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/details_weather_conditions"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <!--Temperature range-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/details_weather_conditions_parent"
+            android:id="@+id/details_temp_range_parent"
+            android:layout_margin="5dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/details_temp_range_text"
+                android:gravity="end"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/details_temp_range"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:gravity="start"
+                android:paddingLeft="5dp"/>
+
+        </LinearLayout>
+
+        <!--Pressure-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/details_temp_range_parent"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:id="@+id/details_pressure_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/details_pressure_text"
+                android:gravity="end"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/details_pressure"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:gravity="start"
+                android:paddingLeft="5dp"/>
+
+        </LinearLayout>
+
+        <!--Humidity-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/details_pressure_parent"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:id="@+id/details_humidity_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/details_humidity_text"
+                android:gravity="end"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/details_humidity"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:gravity="start"
+                android:paddingLeft="5dp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/black"
+            android:id="@+id/details_weather_not_available"
+            android:layout_centerInParent="true"
+            android:gravity="center"/>
+
+        </RelativeLayout>
+
+</RelativeLayout>
